@@ -1,3 +1,6 @@
+// By Luke Cyca
+// https://lukecyca.com
+// https://github.com/lukecyca/TetrisThemeArduino
 
 #define PIEZO_PIN  (13)
 
@@ -118,64 +121,64 @@
 #define BPM   (120.0)
 
 
-float lead_notes[] = {  
+float lead_notes[] = {
   // part 1
-  _E5, _B4, _C5, _D5, _C5, _B4, _A4, _A4, _C5, _E5, _D5, _C5, _B4, _B4, _C5, _D5, _E5, _C5, _A4, _A4, _R, 
+  _E5, _B4, _C5, _D5, _C5, _B4, _A4, _A4, _C5, _E5, _D5, _C5, _B4, _B4, _C5, _D5, _E5, _C5, _A4, _A4, _R,
   _D5, _F5, _A5, _G5, _F5, _E5, _C5, _E5, _D5, _C5, _B4, _B4, _C5, _D5, _E5, _C5, _A4, _A4, _R,
-  
+
   // part 2
   _E4, _C4, _D4, _B3, _C4, _A3, _GS3, _B3,
   _E4, _C4, _D4, _B3, _C4, _E4, _A4, _A4, _GS4, _R
-  
+
 };
-float lead_times[] = {  
+float lead_times[] = {
   // part 1
-  1.0, 0.5, 0.5, 1.0, 0.5, 0.5, 1.0, 0.5, 0.5, 1.0, 0.5, 0.5, 1.0, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 
+  1.0, 0.5, 0.5, 1.0, 0.5, 0.5, 1.0, 0.5, 0.5, 1.0, 0.5, 0.5, 1.0, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
   1.5, 0.5, 1.0, 0.5, 0.5, 1.5, 0.5, 1.0, 0.5, 0.5, 1.0, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
-  
+
   // part 2
-  2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 
-  2.0, 2.0, 2.0, 2.0, 1.0, 1.0, 1.0, 1.0, 3.0, 1.0 
-  
+  2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0,
+  2.0, 2.0, 2.0, 2.0, 1.0, 1.0, 1.0, 1.0, 3.0, 1.0
+
 };
 
-float bass_notes[] = { 
+float bass_notes[] = {
   // part 1
   _E2, _E3, _E2, _E3, _E2, _E3, _E2, _E3, _A1, _A2, _A1, _A2, _A1, _A2, _A1, _A2, _GS1, _GS2, _GS1, _GS2, _GS1, _GS2, _GS1, _GS2, _A1, _A2, _A1, _A2, _A1, _B2, _C3, _E3,
-  _D2, _D3, _D2, _D3, _D2, _D3, _D2, _D3, _C2, _C3, _C2, _C3, _C2, _C3, _C2, _C3, _B1, _B2, _B1, _B2, _B1, _B2, _B1, _B2, _A1, _A2, _A1, _A2, _A1, _A2, _A1, _A2, 
-  
+  _D2, _D3, _D2, _D3, _D2, _D3, _D2, _D3, _C2, _C3, _C2, _C3, _C2, _C3, _C2, _C3, _B1, _B2, _B1, _B2, _B1, _B2, _B1, _B2, _A1, _A2, _A1, _A2, _A1, _A2, _A1, _A2,
+
   // part 2
-  _A1, _E2, _A1, _E2, _A1, _E2, _A1, _E2, _GS1, _E2, _GS1, _E2, _GS1, _E2, _GS1, _E2, _A1, _E2, _A1, _E2, _A1, _E2, _A1, _E2, _GS1, _E2, _GS1, _E2, _GS1, _E2, _GS1, _E2, 
+  _A1, _E2, _A1, _E2, _A1, _E2, _A1, _E2, _GS1, _E2, _GS1, _E2, _GS1, _E2, _GS1, _E2, _A1, _E2, _A1, _E2, _A1, _E2, _A1, _E2, _GS1, _E2, _GS1, _E2, _GS1, _E2, _GS1, _E2,
   _A1, _E2, _A1, _E2, _A1, _E2, _A1, _E2, _GS1, _E2, _GS1, _E2, _GS1, _E2, _GS1, _E2, _A1, _E2, _A1, _E2, _A1, _E2, _A1, _E2, _GS1, _E2, _GS1, _E2, _GS1, _E2, _GS1, _E2
-  
+
 
 };
-float bass_times[] = { 
+float bass_times[] = {
   // part 1
   0.5,  0.5,  0.5,  0.5,  0.5,  0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
   0.5,  0.5,  0.5,  0.5,  0.5,  0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
-  
+
   // part 2
   0.5,  0.5,  0.5,  0.5,  0.5,  0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
   0.5,  0.5,  0.5,  0.5,  0.5,  0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5
- 
+
 };
 
 
 // duration is in microseconds
 void play_one_note(float frequency, unsigned long duration) {
   unsigned long period = 1000000.0/frequency;
-  
+
   for (unsigned int cycles=duration/period; cycles>0; cycles--) {
     // half the time on
     digitalWrite(PIEZO_PIN, HIGH);
     delayMicroseconds( period/2 );
 
     // half the time off
-    digitalWrite(PIEZO_PIN, LOW);      
+    digitalWrite(PIEZO_PIN, LOW);
     delayMicroseconds( period/2 );
   }
-  
+
   // If the duration wasn't a multiple of the period, delay the remainder
   delayMicroseconds(duration % period);
 }
@@ -213,7 +216,7 @@ void loop() {
     bass_freq = bass_notes[curr_bass_note];
     note_value = min(curr_lead_note_time_remaining, curr_bass_note_time_remaining);
     duration = note_value * 1000000 * (60.0/BPM);
-    
+
     if (lead_freq > 0 && bass_freq > 0) {
       play_two_notes(lead_freq, bass_freq, duration);
     } else if (lead_freq > 0) {
@@ -223,14 +226,14 @@ void loop() {
     } else {
       delay( duration/1000 );
     }
-    
+
     // Advance lead note
     curr_lead_note_time_remaining -= note_value;
     if (curr_lead_note_time_remaining < 0.001) {
       curr_lead_note++;
       curr_lead_note_time_remaining = lead_times[curr_lead_note];
     }
-  
+
     // Advance bass note
     curr_bass_note_time_remaining -= note_value;
     if (curr_bass_note_time_remaining < 0.001) {
